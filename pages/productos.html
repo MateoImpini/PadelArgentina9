@@ -6,10 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos - Padel Argentina</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <!-- AOS: librería de animaciones al hacer scroll -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
-    <link rel="stylesheet" href="../styles/style.css?v=18">
+    <link rel="stylesheet" href="../styles/style.css?v=19">
 </head>
 
 <body class="cuerpo-pagina">
@@ -45,7 +47,7 @@
     <!-- imagenes, textos, videos, articulos, tarjetas  -->
     <main class="main-contenido">
         <section class="seccion-productos">
-        <h2 class="subtitulo titulo-seccion">Paletas y accesorios</h2>
+        <h2 class="subtitulo titulo-seccion" data-aos="fade-up">Paletas y accesorios</h2>
         <div class="grid-productos">
             <article class="tarjeta">
                 <h2 class="subtitulo">Adidas Metalbone Ctrl</h2>
@@ -623,6 +625,18 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS: script de la librería + inicialización -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Como el catálogo tiene muchas tarjetas iguales, se les asigna la
+        // animación por código en lugar de repetir data-aos en cada una.
+        // El retraso escalonado por columna crea el efecto "en cascada".
+        document.querySelectorAll('.grid-productos .tarjeta').forEach(function (tarjeta, i) {
+            tarjeta.setAttribute('data-aos', 'fade-up');
+            tarjeta.setAttribute('data-aos-delay', (i % 3) * 100);
+        });
+        AOS.init({ duration: 700, once: true, offset: 80 });
+    </script>
 </body>
 
 </html>

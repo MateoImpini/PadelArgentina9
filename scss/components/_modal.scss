@@ -4,10 +4,12 @@
 // ============================================================
 
 @use '../utilities/variables' as *;
+@use '../utilities/placeholders' as *;
 
+// Comparte la superficie (fondo crema + esquinas redondeadas) con las
+// tarjetas de contenido mediante @extend, sin repetir esas reglas.
 .modal-personalizado {
-    background-color: $fondo-tarjeta;
-    border-radius: $radio;
+    @extend %superficie-tarjeta;
 
     .modal-header,
     .modal-footer {

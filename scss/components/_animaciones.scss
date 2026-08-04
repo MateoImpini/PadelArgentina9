@@ -1,0 +1,67 @@
+// ============================================================
+//  components/_animaciones.scss
+//  Animaciones locales del sitio (@keyframes) y su aplicación a los
+//  elementos. La librería AOS resuelve las animaciones "al hacer
+//  scroll"; acá quedan las que son propias del proyecto y no
+//  dependen de ninguna librería externa.
+// ============================================================
+
+@use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
+
+// Entrada suave: el elemento aparece desvaneciéndose mientras sube
+// unos píxeles hasta su posición final. Se usa en la portada.
+@keyframes aparecer-subiendo {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// Latido sutil: escala apenas el elemento de forma cíclica para
+// llamar la atención sobre las ofertas sin resultar molesto.
+@keyframes latido {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.06);
+    }
+}
+
+// La portada entra animada al cargar la home (animación local, no AOS).
+.hero-contenido {
+    @include animar(aparecer-subiendo, 0.8s, ease-out);
+}
+
+// La etiqueta de descuento late de forma continua para destacar.
+.badge-descuento {
+    @include animar(latido, 2.4s, ease-in-out, infinite);
+}
+
+// Accesibilidad: si la persona pidió "reducir el movimiento" en su
+// sistema, se anulan animaciones y transiciones (incluidas las de AOS).
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    // AOS oculta los elementos con opacity:0 hasta hacer scroll. Con el
+    // movimiento reducido no se anima la aparición, así que se fuerzan a
+    // visibles para que el contenido nunca quede oculto. Esta hoja se
+    // carga después de aos.css, por lo que estos overrides ganan.
+    [data-aos] {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}

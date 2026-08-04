@@ -18,6 +18,22 @@
     }
 }
 
+// Aplica una animación @keyframes con parámetros. Centraliza el
+// shorthand de `animation` para no repetir nombre/duración/curva en
+// cada selector animado. Todos los parámetros tienen valor por
+// defecto, así el uso mínimo es sólo el nombre:
+//   @include animar(aparecer-subiendo);
+//   @include animar(latido, 2.4s, ease-in-out, infinite);
+@mixin animar($nombre, $duracion: 0.6s, $curva: ease, $repeticion: 1) {
+    animation-name: $nombre;
+    animation-duration: $duracion;
+    animation-timing-function: $curva;
+    animation-iteration-count: $repeticion;
+    // fill-mode: both mantiene el estado inicial antes de arrancar y
+    // el final al terminar, para que no haya "saltos" al comenzar.
+    animation-fill-mode: both;
+}
+
 // Media query por nombre de breakpoint. Centraliza los puntos de
 // quiebre para no repetir los valores en px por todo el proyecto:
 //   @include responsive(tablet) { ... }

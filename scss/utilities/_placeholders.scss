@@ -1,0 +1,26 @@
+// ============================================================
+//  utilities/_placeholders.scss
+//  Selectores placeholder (%nombre) pensados para usar con @extend.
+//  A diferencia de un mixin (que copia sus declaraciones en cada
+//  @include), @extend agrupa todos los selectores que comparten el
+//  mismo bloque en UNA sola regla CSS, sin duplicar propiedades.
+//  Se reservan para patrones idénticos que se repiten tal cual en
+//  varios componentes.
+// ============================================================
+
+@use 'variables' as *;
+
+// Superficie tipo "tarjeta": fondo crema + esquinas redondeadas.
+// La comparten las tarjetas de contenido y el cuerpo del modal, así
+// que ambos extienden este mismo bloque en vez de repetirlo.
+%superficie-tarjeta {
+    background-color: $fondo-tarjeta;
+    border-radius: $radio;
+}
+
+// Base de elemento interactivo que se "eleva": transición preparada
+// sobre transform y sombra. Las tarjetas y otros elementos con hover
+// la extienden y sólo agregan su estado :hover propio.
+%elevable {
+    transition: transform $transicion, box-shadow $transicion;
+}
