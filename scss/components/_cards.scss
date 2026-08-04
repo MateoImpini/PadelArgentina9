@@ -6,16 +6,18 @@
 
 @use '../utilities/variables' as *;
 @use '../utilities/mixins' as *;
+@use '../utilities/placeholders' as *;
 
 // Cada artículo con aire interno propio. Sombra sutil por defecto;
 // transition + hover suman un efecto de elevación al pasar el mouse.
+// La superficie (fondo + radio) y la base de transición se comparten
+// con otros componentes vía @extend de placeholders.
 .tarjeta {
+    @extend %superficie-tarjeta;
+    @extend %elevable;
     @include flex-columna(12px);
     padding: 20px;
-    background-color: $fondo-tarjeta;
-    border-radius: $radio;
     box-shadow: $sombra-tarjeta;
-    transition: transform $transicion, box-shadow $transicion;
 
     &:hover {
         transform: translateY(-4px);
