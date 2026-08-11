@@ -1,0 +1,5 @@
+# Configuración de despliegue en Netlify.
+# El sitio es estático y ya trae el CSS compilado en styles/, por lo que no
+# hay build: se publica la raíz del repositorio tal cual (index.html + pages/).
+[build]
+  publish = "."
