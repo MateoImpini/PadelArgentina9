@@ -14,6 +14,7 @@
 // --- Utilidades (no emiten CSS por sí solas) ---
 @use 'utilities/variables' as *;
 @use 'utilities/mixins' as *;
+@use 'utilities/placeholders' as *;
 
 // --- Base: reset, tipografía y estilos globales a etiquetas ---
 @use 'base/base';
