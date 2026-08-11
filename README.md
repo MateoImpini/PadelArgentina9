@@ -5,7 +5,7 @@ Proyecto del curso de Desarrollo Web de Coderhouse (Módulos 1 al 5).
 
 ## Sitio desplegado
 
-🔗 **[Ver sitio en vivo](https://mateoimpini.github.io/PadelArgentina8/)**
+🔗 **[Ver sitio en vivo](https://mateoimpini.github.io/PadelArgentina9/)**
 
 ## Tecnologías
 
@@ -94,6 +94,6 @@ contenido y estilos.
 Clonar el repositorio y abrir `index.html` en el navegador:
 
 ```bash
-git clone https://github.com/MateoImpini/PadelArgentina8.git
-cd PadelArgentina8
+git clone https://github.com/MateoImpini/PadelArgentina9.git
+cd PadelArgentina9
 ```
