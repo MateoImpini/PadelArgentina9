@@ -1,3 +1,12 @@
+.modal-personalizado, .tarjeta {
+  background-color: rgb(233, 241, 211);
+  border-radius: 8px;
+}
+
+.tarjeta {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
 :root {
   color-scheme: light;
 }
@@ -355,15 +364,6 @@ html {
   color: rgb(22, 34, 22);
 }
 
-.modal-personalizado, .tarjeta {
-  background-color: rgb(233, 241, 211);
-  border-radius: 8px;
-}
-
-.tarjeta {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
 .tarjeta {
   display: flex;
   flex-direction: column;
@@ -420,7 +420,7 @@ figure {
 }
 
 .precio-anterior {
-  color: rgb(130, 135, 120);
+  color: rgb(99, 105, 90);
   font-size: 16px;
   font-weight: 400;
   text-decoration: line-through;
@@ -527,7 +527,7 @@ figure {
   color: rgb(31, 42, 31);
 }
 .campo-formulario::placeholder {
-  color: rgb(130, 135, 120);
+  color: rgb(99, 105, 90);
 }
 
 @keyframes aparecer-subiendo {
