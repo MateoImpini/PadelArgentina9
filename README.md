@@ -49,7 +49,7 @@ padel-argentina/
 │       └── _forms.scss         # Formulario y datos de contacto
 ├── styles/
 │   └── style.css               # CSS COMPILADO (generado por Sass, no editar)
-├── imagenes/                   # Recursos gráficos
+├── assets/                     # Recursos multimedia (imágenes, íconos)
 └── README.md
 ```
 
@@ -84,10 +84,9 @@ npm run watch:css      # modo watch
 
 ## Responsividad
 
-El sitio está maquetado mobile-first. Están completamente adaptadas a mobile y
-desktop la página de inicio (`index.html`), el catálogo (`pages/productos.html`)
-y `pages/sobrenosotros.html`. El resto de las páginas presentan avances de
-contenido y estilos.
+El sitio está maquetado mobile-first y es 100% responsivo en las cinco páginas,
+adaptado a mobile, tablet y desktop mediante media queries, sin scroll horizontal
+ni compresión de elementos.
 
 ## Cómo verlo localmente
 
