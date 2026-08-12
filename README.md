@@ -1,11 +1,11 @@
 # Padel Argentina
 
 Sitio web estático dedicado a la venta de paletas y artículos de pádel.
-Proyecto del curso de Desarrollo Web de Coderhouse (Módulos 1 al 5).
+Proyecto Final del curso de Desarrollo Web de Coderhouse.
 
 ## Sitio desplegado
 
-🔗 **[Ver sitio en vivo](https://mateoimpini.github.io/PadelArgentina9/)**
+🔗 **[Ver sitio en vivo (Netlify)](https://padelargentina.netlify.app/)**
 
 ## Tecnologías
 
