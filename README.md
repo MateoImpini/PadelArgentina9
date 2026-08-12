@@ -93,6 +93,6 @@ ni compresión de elementos.
 Clonar el repositorio y abrir `index.html` en el navegador:
 
 ```bash
-git clone https://github.com/MateoImpini/PadelArgentina9.git
-cd PadelArgentina9
+git clone https://github.com/MateoImpini/PadelArgentinaEntregaFinal.git
+cd PadelArgentinaEntregaFinal
 ```
