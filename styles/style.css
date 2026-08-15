@@ -530,6 +530,27 @@ figure {
   color: rgb(99, 105, 90);
 }
 
+.saltar-contenido {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+  padding: 0.75rem 1.25rem;
+  background-color: rgb(46, 94, 52);
+  color: rgb(255, 254, 254);
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 0 0 8px 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transform: translateY(-150%);
+  transition: transform 0.2s ease;
+}
+.saltar-contenido:focus, .saltar-contenido:focus-visible {
+  transform: translateY(0);
+  outline: 3px solid rgb(233, 250, 158);
+  outline-offset: 2px;
+}
+
 @keyframes aparecer-subiendo {
   from {
     opacity: 0;
