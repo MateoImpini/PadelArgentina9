@@ -1,0 +1,36 @@
+// ============================================================
+//  components/_skip-link.scss
+//  Enlace "Saltar al contenido principal": accesibilidad por teclado.
+//  Es el primer elemento enfocable de la página. Permanece oculto
+//  fuera de pantalla hasta que recibe foco (Tab), momento en el que
+//  aparece arriba a la izquierda para saltar la navegación e ir
+//  directo al <main>. Beneficia a personas que navegan con teclado
+//  o lector de pantalla.
+// ============================================================
+
+@use '../utilities/variables' as *;
+
+.saltar-contenido {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2000; // por encima de la navbar fija
+    padding: 0.75rem 1.25rem;
+    background-color: $acento;
+    color: $texto-sobre-acento;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 0 0 $radio 0;
+    box-shadow: $sombra-tarjeta;
+
+    // Oculto hasta recibir foco: se desplaza fuera de la pantalla.
+    transform: translateY(-150%);
+    transition: transform $transicion;
+
+    &:focus,
+    &:focus-visible {
+        transform: translateY(0);
+        outline: 3px solid $verde-lima;
+        outline-offset: 2px;
+    }
+}
